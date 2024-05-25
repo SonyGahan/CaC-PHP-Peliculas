@@ -20,23 +20,23 @@
     </header>
     <main  id="main" class="main">
       <section  data-aos="zoom-in"  data-aos-duration="1000" class="seccionRegistrarse">
-        <form  action="" method="post">
+        <form  action="" method="get">
             <h2 class="tituloRegistrarse">Iniciar Sesión</h2>
          
             <div>
-                <input type="email" placeholder="Email" required id="email" name="email">
+                <input type="email" placeholder="Email" required id="email" name="email" autocomplete="email">
+                <div class="error-text"></div>
             </div>
             <div>
-                <input type="password" placeholder="Contraseña" required id="password" name="password">
+                <input type="password" placeholder="Contraseña" required id="password" name="password" autocomplete="current-password">
+                <div class="error-text"></div>
             </div>
-          
           
             <div>
                 <input  class="boton" type="submit" value="Ingresar">
             </div>
            
-            <div > 
-               
+            <div >  
                 <a id="ayuda" class="ayuda" href="registrarse.html">Registrarse</a>
             </div>
         </form>
@@ -44,7 +44,8 @@
     </main>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
+    <script src="../js/valida_login.js"></script>
 </body>
 </html>

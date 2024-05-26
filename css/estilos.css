@@ -271,23 +271,23 @@ body{
                        box-shadow: 0 0 30px #9f3648cd;
                        transform: scale(1.1);
                     }
-                    &:hover h4 {
-                        opacity: 1;
-                    }
-                    &:hover::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
+                    &:hover .tituloPelicula{
                         width: 100%;
                         height: 100%;
-                        border-radius: 10px;
-                        background-color: #9f3648; /* Color rojo transparente */
-                        z-index: 1; /* Para asegurarse de que esté sobre la imagen */
+                        backdrop-filter: blur(20px);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &:hover h4 {
+                        width: 100%;
+                        padding: 0.5rem;
+                        opacity: 1;
                     }
                 }
             }
         }
+        
         .boton{
             border: 1px solid white;
             box-sizing: content-box;
@@ -987,4 +987,18 @@ hr{
             }
         }
     }
+}
+
+/*Estilo para Ayuda */
+.custom-list-group-item {
+    background-color:#181419; /* Fondo negro */
+    color: #fff; /* Letra blanca */
+    border-color: transparent;
+}
+.custom-list-group-item a {
+    color: #fff; /* Letra blanca para enlaces */
+    text-decoration: none;
+}
+.custom-list-group-item a:hover {
+    color: #9f3647;    
 }

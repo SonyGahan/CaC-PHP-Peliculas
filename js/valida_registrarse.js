@@ -1,7 +1,7 @@
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', () => {
     // Selecciona el formulario en el DOM
-    const form = document.querySelector('form');
+    const form = document.getElementById('form');
     // Agrega un evento de escucha para cuando se envía el formulario
     form.addEventListener('submit', (event) => {
         // Si la validación del formulario no es exitosa
@@ -42,8 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Si el valor del campo no está vacío, elimina cualquier mensaje de error anterior
             setEliminaMensajeError(document.getElementById('terminos'));
-            // Devuelve true indicando que la validación ha tenido éxito
-            esValido = true;
         }
         return esValido;
     };
@@ -131,9 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Verifica si el correo electrónico cumple con el formato
         return regular.test(email);
     };
-    
-      // Agrega eventos para borrar las clases de error cuando se completa el input o se presiona Tab
-      form.querySelectorAll('input').forEach(input => {
+
+    // Agrega eventos para borrar las clases de error cuando se completa el input o se presiona Tab
+    form.querySelectorAll('input').forEach(input => {
         input.addEventListener('input', () => {
             // Obtiene el valor del campo y elimina los espacios en blanco al principio y al final
             const valor = input.value.trim();
@@ -144,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-     // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
-     form.querySelectorAll('select').forEach(select => {
+    // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
+    form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', () => {
             // Obtiene el valor seleccionado del campo de selección
             const valor = select.value;

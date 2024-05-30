@@ -1,7 +1,7 @@
 // Espera a que el DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', () => {
     // Selecciona el formulario en el DOM
-    const form = document.querySelector('form');
+    const form = document.getElementById('form');
 
     // Agrega un evento de escucha para cuando se envía el formulario
     form.addEventListener('submit', (event) => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setMensajeError(campo, 'El campo correo electrónico es obligatorio');
             // Devuelve false indicando que la validación ha fallado
             return false;
-        // Si el campo de correo electrónico no está vacío pero no es válido
+            // Si el campo de correo electrónico no está vacío pero no es válido
         } else if (!esEmail(email)) {
             // Establece un mensaje de error para el campo de correo electrónico
             setMensajeError(campo, mensajeError);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    
+
     // Función para establecer un mensaje de error en un campo
     const setMensajeError = (campoEntrada, mensaje) => {
         // Encuentra el elemento padre del campo de entrada
@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return regular.test(email);
     };
 
-     // Agrega eventos para borrar las clases de error cuando se completa el input o se presiona Tab
-     form.querySelectorAll('input').forEach(input => {
+    // Agrega eventos para borrar las clases de error cuando se completa el input o se presiona Tab
+    form.querySelectorAll('input').forEach(input => {
         input.addEventListener('input', () => {
             // Obtiene el valor del campo y elimina los espacios en blanco al principio y al final
             const valor = input.value.trim();
@@ -129,9 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
-     // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
-     form.querySelectorAll('select').forEach(select => {
+
+    // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
+    form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', () => {
             // Obtiene el valor seleccionado del campo de selección
             const valor = select.value;
@@ -140,5 +140,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 setEliminaMensajeError(select);
             }
         });
-    }); 
+    });
 });
